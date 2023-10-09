@@ -1,0 +1,61 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "db/migrate/*.rb"
+    - "db/schema.rb"
+
+RSpec/ExampleLength:
+  Max: 30
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MutableConstant:
+  EnforcedStyle: strict
+
+Layout/LineLength:
+  Max: 80
+  AllowedPatterns: ["^ *# "]
+
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/BlockLength:
+  AllowedMethods:
+    - "configure"
+    - "context"
+    - "describe"
+    - "ActiveRecord::Schema.define"
+    - "RSpec.shared_examples"
+
+Metrics/MethodLength:
+  Max: 20
+  AllowedMethods:
+    - "prepare_variables"
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Style/SingleLineMethods:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/MatchArray:
+  Enabled: false

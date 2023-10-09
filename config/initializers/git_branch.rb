@@ -1,9 +1,3 @@
-class GitBranch
-  include Singleton
+# frozen_string_literal: true
 
-  attr_reader :name
-
-  def initialize
-    @name = `git rev-parse --abbrev-ref HEAD`.strip
-  end
-end
+GIT_BRANCH = `git rev-parse --abbrev-ref HEAD`.strip.freeze
