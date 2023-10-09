@@ -26,3 +26,7 @@ group :development do
   gem 'annotate'
   gem 'web-console'
 end
+
+group :test do
+  gem 'capybara'
+end
