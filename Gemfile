@@ -15,6 +15,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
@@ -22,5 +23,6 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'web-console'
 end
