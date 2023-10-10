@@ -75,3 +75,22 @@ jobs:
       - name: Brakeman Scan
         run: |
           brakeman --exit-on-warn --quiet --no-pager
+
+  dependencies:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+          bundler-cache: true
+      - run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+
+      - name: Dependency Scan
+        run: |
+          bundle-audit check --update
+          ruby-audit check
