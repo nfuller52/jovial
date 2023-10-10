@@ -11,4 +11,8 @@
 #
 class Message < ApplicationRecord
   validates :content, presence: true
+
+  def self.random
+    order('RANDOM()').first
+  end
 end

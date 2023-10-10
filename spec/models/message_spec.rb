@@ -23,4 +23,20 @@ RSpec.describe Message do
       expect(message.errors.details[:content]).to include(error: :blank)
     end
   end
+
+  describe '.random' do
+    context 'when there are no messages' do
+      it 'returns nothing' do
+        expect(described_class.random).to be_nil
+      end
+    end
+
+    context 'when there are messages' do
+      before { create(:message) }
+
+      it 'returns a Message record' do
+        expect(described_class.random).to be_a(described_class)
+      end
+    end
+  end
 end

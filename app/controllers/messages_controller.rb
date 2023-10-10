@@ -2,6 +2,6 @@
 
 class MessagesController < ApplicationController
   def index
-    # @messages = Message.all
+    @message = Message.random
   end
 end
