@@ -1,6 +1,6 @@
 name: Ruby CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   code_analysis:
@@ -48,6 +48,9 @@ jobs:
           sudo apt-get -yqq install libpq-dev
           gem install bundler
           bundle install --jobs 4 --retry 3
+
+      - name: Compile assets
+        run: bundle exec rake assets:precompile
 
       - name: Run Rspec
         env:
