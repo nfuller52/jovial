@@ -58,7 +58,7 @@ jobs:
           bundle exec rspec
 
   static_analysis:
-    name: Brakeman
+    name: Static Analysis
     runs-on: ubuntu-latest
 
     # services:
@@ -93,4 +93,4 @@ jobs:
           DATABASE_URL: postgres://postgres:password@localhost:5432/jovial_test
           RAILS_ENV: test
         run: |
-          bundle exec brakeman --exit-on-warn --quiet --no-pager
+          brakeman --exit-on-warn --quiet --no-pager
