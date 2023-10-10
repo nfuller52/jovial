@@ -49,11 +49,10 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3
 
-      - name: Compile assets
-        run: bundle exec rake assets:precompile
-
       - name: Run Rspec
         env:
           DATABASE_URL: postgres://postgres:password@localhost:5432/jovial_test
           RAILS_ENV: test
-        run: bundle exec rspec
+        run: |
+          bundle exec rake assets:precompile
+          bundle exec rspec
