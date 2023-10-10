@@ -6,8 +6,8 @@ jobs:
   code_analysis:
     name: Code Analysis
     runs-on: ubuntu-latest
-      container:
-        image: ruby:3.2.2
+    container:
+      image: ruby:3.2.2
 
     steps:
       - uses: actions/checkout@v4
@@ -24,8 +24,8 @@ jobs:
   rspec:
     name: RSpec
     runs-on: ubuntu-latest
-      container:
-        image: ruby:3.2.2
+    container:
+      image: ruby:3.2.2
 
     services:
       postgres:
