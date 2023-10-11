@@ -9,6 +9,7 @@ AllCops:
     - "bin/**/*"
     - "db/migrate/*.rb"
     - "db/schema.rb"
+    - "vendor/**/*"
 
 RSpec/ExampleLength:
   Max: 30
